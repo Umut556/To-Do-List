@@ -1,0 +1,149 @@
+body.authenticated {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #868686; 
+    /*background: linear-gradient(135deg, #598ec4, #27a150); 
+    animation: gradientAnimation 10s ease infinite;*/
+  }
+  
+  /*@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 50% 100%;
+    }
+  }*/
+  
+  .gorev-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1150px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  
+  .gorev-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 500px; 
+    width: 1100px;
+    max-width: 100%;
+  }
+  
+  .gorev-header {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+    margin-bottom: 20px; 
+  }
+  
+  .gorev-filter-buttons {
+    display: flex;
+    gap: 5px; 
+  }
+  
+  .gorev-search-field {
+    margin-left: 60px;
+  }
+  
+  .gorev-button-group {
+    display: flex;
+    gap: 15px;
+    align-items: center; 
+  }
+  
+  
+  input[type="date"] {
+    margin-left: 10px;
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .gorev-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all; 
+  }
+  
+  .gorev-modal {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    z-index: 1001;
+    pointer-events: all; 
+  }
+  
+  
+  .gorev-modal input {
+    padding: 12px;
+    margin: 10px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .gorev-modal-footer {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 10px;  
+    padding: 10px 0; 
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: 90%; 
+      height: auto; 
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      width: 95%; 
+      height: auto; 
+      border-radius: 15px; 
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: black;
+  }
+  
+  .gorev-yazi {
+    color: black;
+  }
+
+  .MuiPopover-root {
+    position: absolute !important;
+    z-index: 1600 !important;
+  }
+  

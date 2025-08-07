@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <!-- Görev tablosunu oluşturma -->
+    <changeSet id="1" author="umut">
+        <createTable tableName="gorev">
+            <column name="id" type="SERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="baslik" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="aciklama" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="derece" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="baslangic_tarihi" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bitis_tarihi" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="durum" type="VARCHAR(50)"/>
+
+            <column name="kullanici_id" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tur" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uyari_suresi" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="umut">
+        <createTable tableName="kullanici">
+            <column name="id" type="SERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="mail" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sifre" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="3" author="umut">
+        <addForeignKeyConstraint 
+            baseTableName="gorev"
+            baseColumnNames="kullanici_id"
+            referencedTableName="kullanici"
+            referencedColumnNames="id"
+            constraintName="fk_gorev_kullanici"
+            onDelete="CASCADE"/>
+    </changeSet>
+
+    <changeSet id="4" author="umut">
+        <addDefaultValue
+            tableName="gorev"
+            columnName="tur"
+            defaultValue="public"/>
+    </changeSet>
+
+    <changeSet id="5" author="umut">
+        <addDefaultValue
+            tableName="gorev"
+            columnName="kullanici_id"
+            defaultValue="1"/>
+    </changeSet>
+
+    <changeSet id="6" author="umut">
+        <addColumn tableName="kullanici">
+            <column name="adi" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

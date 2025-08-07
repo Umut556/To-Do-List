@@ -1,0 +1,10 @@
+com\example\api\ApiApplication.class
+com\example\api\gorev\entity\Gorev.class
+com\example\api\kullanici\entity\Kullanici.class
+com\example\api\kullanici\repository\KullaniciRepository.class
+com\example\api\gorev\repository\GorevRepository.class
+com\example\api\gorev\service\GorevService.class
+com\example\api\gorev\controller\GorevController.class
+com\example\api\comman\GeneralException.class
+com\example\api\kullanici\controller\KullaniciController.class
+com\example\api\kullanici\service\KullaniciService.class
